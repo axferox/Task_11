@@ -1,34 +1,34 @@
+# About:
+This is my pet project of selfsufficient web testing framework baseon on Selenium Webdriver 4, Selenium Grid 4 with using the Page Object model and Page Factory
+
 # Requirements:
 + Node version 8 or above
 + Bash shell
 + Java
 
 # Installation:
+1. First you'll need to install the npm 
 
-1. Update your chrome and gecko drivers for Selenium Grid according to your operating system in this folder: 'test/grid'. 
+2. Update your chrome and gecko drivers for Selenium Grid according to your operating system in this folder: 'test/grid'. 
 By default it's used the web drivers for launch on a MacOS
 
-2. Launch the Grid Hub via executing the bash script
+3. Launch the Grid Hub 
 ```
-bash hub_launch.sh
+npm start hub
 ```
-2. Then you'll need to launch the Firefox agent node or Chrome agent node via scripts from 'test/grid'
+4. Then you'll need to launch the Firefox agent node or Chrome node and specify one of the proposed OS's, amount of nodes in unlimited so node selects the free random port from the range
 ```
-bash chrome_node_1.sh
-```
-OR
-```
-bash chrome_node_1.sh
+npm start node chrome 96 mac
 ```
 OR
 ```
-bash firefox_node_1.sh
-```
-3. Then you'll need to install the npm 
-```
-npm install
+npm start node firefox 95 windows
+
 ```
 # Launch
+To launch the test run you'll need to define the test type smoke/sanity/regression, target browser, it's version, target platform and environment like here:
 ```
-npm test
+npm start test smoke test chrome 95 mac localhost  
 ```
+
+Project is still under construction and will be maintained as long as it's posssible

@@ -1,8 +1,9 @@
 const winston = require("winston");
 const { format, transports } = require("winston");
-const { combine, simple} = format;
+const { combine, simple } = format;
 
 const logger = winston.createLogger({
+  exitOnError: false,
   level: "info",
   format: combine(simple()),
   transports: [
@@ -11,6 +12,9 @@ const logger = winston.createLogger({
     new winston.transports.File({ filename: "test/logs/combined.logger.log", level: "debug" }),
   ],
 });
+
+logger.exceptions.handle(new transports.File({ filename: "test/logs/error.logger.log" }));
+logger.rejections.handle(new transports.File({ filename: "test/logs/combined.logger.log" }));
 
 module.exports = {
   logger,

@@ -1,6 +1,6 @@
 const { Builder, wait, until, By } = require("selenium-webdriver");
 const { logger } = require("../../../config/logger.config");
-const { driver } = require("../../driver/chrome_driver");
+const { driver } = require("../../../config/driver.config");
 const { Header } = require("./header");
 
 class BasePage {
