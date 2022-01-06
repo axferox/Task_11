@@ -6,15 +6,15 @@ const { startNode, startHub } = require("./grid-controller.config");
 yargs
   .command({
     command: "hub",
-    description: "Start Selenium grid 4 gub with a full command like: 'npm start hub'",
+    description: "Start Selenium grid 4 рub with a full command like: 'npm start hub'",
     handler() {
       startHub();
     }
   })
   .help()
-  .parse()
+  .parse();
 
-  yargs
+yargs
     .command({
       command: "node [browserName] [browserVersion] [platformName]",
       description: "Start node with a full command like: 'npm start node chrome 96 mac'",
