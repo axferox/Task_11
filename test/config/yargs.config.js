@@ -44,28 +44,7 @@ yargs
 
 yargs
   .command({
-    command: "node [browserName] [browserVersion] [platformName]",
-    description: "Start node with a full command like: 'npm start node chrome 96 mac'",
-    builder: {
-      browserName: {
-        describe: "chrome/firefox",
-        demandOption: true,
-        type: "string",
-      },
-      browserVersion: {
-        describe: "Browser version is required, session will not start otherwise, will accept only natural numbers",
-        demandOption: true,
-        type: "number",
-      },
-      platformName: {
-        describe: "windows/mac/linux",
-        demandOption: true,
-        type: "string",
-      },
-    },
-     handler(argv) {
-       startNode(argv.browserName, argv.browserVersion);
-    },
+  
     command: "test [testType] [browserName] [browserVersion] [platformName] [environment]",
     description: "Start test with a full command like: 'npm start test smoke chrome 96 mac localhost'",
     builder: {

@@ -32,13 +32,12 @@ async function getGridStatus() {
 
 async function startNode(browserName, browserVersion) {
   const port = await portSelector();
-  if (browserName) {
+  if (browserName !== 'undefined') {
     exec(
       `java -jar test/grid/selenium-server-4.1.1.jar node --port ${port} --session-timeout 90 --config test/grid/node_config_${browserName}_${browserVersion}.toml`,
       (error, stdout, stderr) => {
         if (error) {
           console.error(`exec error: ${error}`);
-          return;
         }
         console.log(`stdout: ${stdout}`);
         console.error(`stderr: ${stderr}`);
