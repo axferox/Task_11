@@ -1,50 +1,9 @@
 const { exec } = require("child_process");
 const yargs = require("yargs");
 const fs = require("fs");
-const { startNode, startHub } = require("./grid-controller.config");
 
 yargs
   .command({
-    command: "hub",
-    description: "Start Selenium grid 4 рub with a full command like: 'npm start hub'",
-    handler() {
-      startHub();
-    }
-  })
-  .help()
-  .parse();
-
-yargs
-    .command({
-      command: "node [browserName] [browserVersion] [platformName]",
-      description: "Start node with a full command like: 'npm start node chrome 96 mac'",
-      builder: {
-        browserName: {
-          describe: "chrome/firefox",
-          demandOption: true,
-          type: "string",
-        },
-        browserVersion: {
-          describe: "Browser version is required, node will not start otherwise, will accept only natural numbers",
-          demandOption: true,
-          type: "number",
-        },
-        platformName: {
-          describe: "windows/mac/linux",
-          demandOption: true,
-          type: "string",
-        },
-      },
-      handler(argv) {
-        startNode(argv.browserName, argv.browserVersion);
-      },
-    })
-    .help()
-    .parse();
-
-yargs
-  .command({
-  
     command: "test [testType] [browserName] [browserVersion] [platformName] [environment]",
     description: "Start test with a full command like: 'npm start test smoke chrome 96 mac localhost'",
     builder: {

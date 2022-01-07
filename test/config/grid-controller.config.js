@@ -7,7 +7,7 @@ const {
 
 function startHub() {
   exec(
-    `java -jar test/grid/selenium-server-4.1.1.jar hub `,
+    `java -jar test/grid/selenium-server-4.1.1.jar hub`,
     (error, stdout, stderr) => {
       if (error) {
         console.error(`exec error: ${error}`);

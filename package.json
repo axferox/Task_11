@@ -7,12 +7,15 @@
   },
   "scripts": {
     "test": "mocha --config ./**/**/.mocharc.js",
+    "start": "node ./test/config/yargs.tests.config.js",
+    "prestart": "node ./**/**/**/browser_config_cleanup.js",
+    "selenium": "node ./test/config/yargs.hub.config.js",
+    "node": "node ./test/config/yargs.node.config.js",
     "smoke": "npm test ./**/**/smoke-test/*.spec.js",
     "regression": "npm test ./**/**/regression-test/*.spec.js",
     "sanity": "npm test ./**/**/sanity-test/*.spec.js",
     "remove-logs": "node ./**/**/**/log_cleanup.js",
-    "pretest": "npm run remove-logs",
-    "start": "node ./test/config/yargs.config.js"
+    "pretest": "npm run remove-logs"
   },
   "repository": {
     "type": "git",

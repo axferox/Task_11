@@ -14,15 +14,15 @@ By default it's used the web drivers for launch on a MacOS
 
 3. Launch the Grid Hub 
 ```
-npm start hub
+npm run selenium hub
 ```
 4. Then you'll need to launch the Firefox agent node or Chrome node and specify one of the proposed OS's, amount of nodes in unlimited so node selects the free random port from the range
 ```
-npm start node chrome 96 mac
+npm run node with chrome 96 mac
 ```
 OR
 ```
-npm start node firefox 95 windows
+npm run node with firefox 95 windows
 
 ```
 # Launch
