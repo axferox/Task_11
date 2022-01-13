@@ -1,32 +1,48 @@
 {
-  "name": "task_7_webdriverjs_ah",
+  "name": "task_10_webdriverjs",
   "version": "1.0.0",
   "main": "index.js",
   "directories": {
-    "test": "test/**.spec.js"
+    "test": "test/specs/**/**.spec.js"
   },
   "scripts": {
-    "test": "mocha --timeout 100000"
+    "test": "mocha --config ./**/**/.mocharc.js",
+    "start": "node ./test/config/yargs.tests.config.js",
+    "prestart": "node ./**/**/**/browser_config_cleanup.js",
+    "selenium": "node ./test/config/yargs.hub.config.js",
+    "node": "node ./test/config/yargs.node.config.js",
+    "smoke": "npm test ./**/**/smoke-test/*.spec.js",
+    "regression": "npm test ./**/**/regression-test/*.spec.js",
+    "sanity": "npm test ./**/**/sanity-test/*.spec.js",
+    "remove-logs": "node ./**/**/**/log_cleanup.js",
+    "pretest": "npm run remove-logs"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/axferox/Task_7_WebdriverJS_AH.git"
+    "url": "git+https://github.com/axferox/Task_10_WebdriverJS.git"
   },
   "keywords": [],
   "author": "axferox",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/axferox/Task_7_WebdriverJS_AH/issues"
+    "url": "https://github.com/axferox/Task_10_WebdriverJS/issues"
   },
-  "homepage": "https://github.com/axferox/Task_7_WebdriverJS_AH#readme",
+  "homepage": "https://github.com/axferox/Task_10_WebdriverJS#readme",
   "dependencies": {
     "chromedriver": "^96.0.0",
+    "configstore": "^6.0.0",
     "geckodriver": "^2.0.4",
-    "selenium-webdriver": "^4.1.0"
+    "selenium-webdriver": "^4.1.0",
+    "yargs": "^17.3.1"
   },
   "devDependencies": {
     "chai": "^4.3.4",
-    "mocha": "^9.1.3"
+    "fs-extra": "^10.0.0",
+    "mocha": "^9.1.3",
+    "mochawesome": "^7.0.1",
+    "node-fetch": "^2.6.1",
+    "path": "^0.12.7",
+    "winston": "^3.3.3"
   },
-  "description": ""
+  "description": "+ Node version 8 or above + Bash shell + Java"
 }

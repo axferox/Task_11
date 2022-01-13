@@ -1,15 +1,11 @@
-const { PageFactory } = require("../utils/page_factory");
-const { browserConfig, sleep, quit } = require("../utils/driver/chrome_driver");
+const { PageFactory } = require("../../utils/page_factory");
 const { expect } = require("chai");
-const { TestData } = require("../utils/test_data/test_data");
-const { driver } = require("../utils/driver/chrome_driver");
+const { TestData } = require("../../utils/test_data/test_data");
+const { quit } = require("../../config/driver.config");
 
-describe("Test performs the testing of the login and sign up forms", () => {
-  before(async () => {
-    await browserConfig();
-  });
+describe("Smoke test 1", () => {
+  before(async () => {});
   after(async () => {
-    await sleep();
     await quit();
   });
 
