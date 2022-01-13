@@ -3,7 +3,6 @@ This is my pet project of selfsufficient web testing framework baseon on Seleniu
 
 # Requirements:
 + Node version 8 or above
-+ Bash shell
 + Java
 
 # Installation:
