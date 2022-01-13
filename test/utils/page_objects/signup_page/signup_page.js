@@ -5,6 +5,8 @@ class SignUp extends BasePage {
         super();
         this.path = "/mijn/inschrijven/bestellen?ref=%2F";
 
+				this.expectedTitle = "Mijn Ah.nl | online bestellen | AH.nl";
+
         this.maleButton = {
             locatorType: "id",
             locatorId: "f-radio-button-gender-male",

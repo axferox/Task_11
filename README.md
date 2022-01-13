@@ -30,4 +30,4 @@ To launch the test run you'll need to define the test type smoke/sanity/regressi
 npm start test smoke test chrome 95 mac localhost  
 ```
 
-Project is still under construction and will be maintained as long as it's posssible
+Project is still under construction and will be maintained as long as it's possible

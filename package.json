@@ -7,14 +7,18 @@
   },
   "scripts": {
     "test": "mocha --config ./**/**/.mocharc.js",
+    "cucumber": "node ./test/config/yargs.cucumber.tests.config.js",
+    "precucumber": "npm run remove-browser-config & npm run remove-cucumber-reports & npm run remove-logs",
     "start": "node ./test/config/yargs.tests.config.js",
-    "prestart": "node ./**/**/**/browser_config_cleanup.js",
+    "prestart": "npm run remove-browser-config & npm run remove-logs",
     "selenium": "node ./test/config/yargs.hub.config.js",
     "node": "node ./test/config/yargs.node.config.js",
     "smoke": "npm test ./**/**/smoke-test/*.spec.js",
     "regression": "npm test ./**/**/regression-test/*.spec.js",
     "sanity": "npm test ./**/**/sanity-test/*.spec.js",
     "remove-logs": "node ./**/**/**/log_cleanup.js",
+    "remove-browser-config": "node ./**/**/**/log_cleanup.js",
+    "remove-cucumber-reports": "node ./**/**/**/cucumber_reports_cleanup.js",
     "pretest": "npm run remove-logs"
   },
   "repository": {
@@ -36,6 +40,7 @@
     "yargs": "^17.3.1"
   },
   "devDependencies": {
+    "@cucumber/cucumber": "^8.0.0-rc.2",
     "chai": "^4.3.4",
     "fs-extra": "^10.0.0",
     "mocha": "^9.1.3",
