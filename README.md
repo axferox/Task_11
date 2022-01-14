@@ -25,9 +25,15 @@ npm run node with firefox 95 windows
 
 ```
 # Launch
-To launch the test run you'll need to define the test type smoke/sanity/regression, target browser, it's version, target platform and environment like here:
+To launch the test with using simple mocha you'll need to define the test type smoke/sanity/regression, target browser, it's version, target platform and environment like here:
 ```
 npm start test smoke test chrome 95 mac localhost  
 ```
+To launch the test with using Cucumber you'll need to define the test type smoke/sanity/regression/outline, target browser, it's version, target platform and environment like here:
+```
+npm run cucumber test outline chrome 96 mac localhost
+```
+
+
 
 Project is still under construction and will be maintained as long as it's possible
