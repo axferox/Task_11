@@ -103,5 +103,8 @@ dist
 # TernJS port file
 .tern-port
 
-#Mockawesome reporter
+#Mochawesome reporter
 mochawesome-report
+
+#.idea folder
+.idea/
