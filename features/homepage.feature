@@ -6,10 +6,10 @@ Feature: Home Page Title
 
   @sanity
   Scenario: Checking the page title
-    Given I am opening "Sign_up" page
-    Then the page title should be equal to expected "Sign_up" page title
+    Given I am opening "Sign up" page
+    Then the page title should be equal to expected "Sign up" page title
 
   @regression
   Scenario: Checking the page title
-    Given I am opening "Log_in" page
-    Then the page title should be equal to expected "Log_in" page title
+    Given I am opening "Log in" page
+    Then the page title should be equal to expected "Log in" page title
